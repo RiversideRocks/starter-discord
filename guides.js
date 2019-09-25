@@ -31,7 +31,7 @@ router.get("/botinfo", async function(request, response) {
       discordBot.config.client.user.id +
       "&permissions=0&scope=bot";
   } catch (e) {
-    console.log("Error caught");
+    console.error(e);
   }
 
   response.status(200).json({
