@@ -24,11 +24,12 @@ router.get("/botinfo", async function(request, response) {
   let authURL;
   let domain = process.env.PROJECT_DOMAIN;
   let uptime = process.uptime();
-  
+
   try {
-     authURL = "https://discordapp.com/api/oauth2/authorize?client_id=" +
-    discordBot.config.client.user.id +
-    "&permissions=0&scope=bot";
+    authURL =
+      "https://discordapp.com/api/oauth2/authorize?client_id=" +
+      discordBot.config.client.user.id +
+      "&permissions=0&scope=bot";
   } catch (e) {
     console.log("Error caught");
   }
@@ -39,8 +40,6 @@ router.get("/botinfo", async function(request, response) {
     uptime: uptime
   });
 });
-
-
 
 router.get("/checkinstall", function(request, response) {
   if (!process.env.DISCORD_TOKEN) {
@@ -55,7 +54,7 @@ router.get("/checkinstall", function(request, response) {
 
     var customTimeout = 5000;
 
-    response.setTimeout(customTimeout, function(){
+    response.setTimeout(customTimeout, function() {
       response.send(500, { error: "timeout" });
     });
 
@@ -72,12 +71,11 @@ router.get("/checkinstall", function(request, response) {
     });
   }
 });
-if (process.env.GUIDE){
+if (process.env.GUIDE) {
   router.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/remix.html");
   });
-}
-else if (!process.env.DISCORD_TOKEN) {
+} else if (!process.env.DISCORD_TOKEN) {
   router.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/install.html");
   });

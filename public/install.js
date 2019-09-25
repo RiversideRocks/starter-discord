@@ -18,7 +18,7 @@ timedOut.style.display = "none";
 
 
 const envFileLinkDiscord = document.getElementById("envFileLinkDiscord");
-const envFileLinkUptime = document.getElementById("envFileLinkUptime");
+
 
 const projectURL = document.getElementById("project_url");
 
@@ -67,7 +67,6 @@ function getDomain() {  return fetch("/domainname/")
           console.log("starter botkit")
         }
         projectURL.innerHTML = "https://" + domainName + ".glitch.me";
-        envFileLinkUptime.href = "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
 
         envFileLinkDiscord.href = "https://glitch.com/edit/#!/" + domainName + "?path=.env:9";
       }
