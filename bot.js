@@ -1,16 +1,16 @@
-
-const discordBotkit = require('botkit-discord');
+const discordBotkit = require("botkit-discord");
 
 const configuration = {
-	token: process.env.DISCORD_TOKEN
+  token: process.env.DISCORD_TOKEN
 };
 
 const discordBot = discordBotkit(configuration);
-  var normalizedPath = require("path").join(__dirname, "skills");
+var normalizedPath = require("path").join(__dirname, "skills");
 
-  require("fs").readdirSync(normalizedPath).forEach(function(file) {
+require("fs")
+  .readdirSync(normalizedPath)
+  .forEach(function(file) {
     require("./skills/" + file)(discordBot);
   });
-
 
 module.exports = discordBot;
