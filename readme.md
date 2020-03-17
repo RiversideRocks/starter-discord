@@ -1,4 +1,5 @@
 # Botkit Discord Starter App
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/glitchdotcom/starter-discord)
 
 Starter Botkit Discord is a Discord bot with an interactive setup and coding guide. Click "Show" to start following the guide. We recommend following the guide before you go through the code here. 
 
